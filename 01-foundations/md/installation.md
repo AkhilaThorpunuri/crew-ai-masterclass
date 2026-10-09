@@ -10,8 +10,6 @@
 - Verifying the CrewAI installation
 - Verifying the CrewAI CLI
 - Choosing a supported Python version
-- Creating the first CrewAI project
-- Understanding the generated project structure
 
 ## Overview
 
@@ -169,62 +167,6 @@ If the command executes successfully, the CrewAI CLI is available in your enviro
 
 ---
 
-### 5. Create your first CrewAI project
-
-Once CrewAI is installed, create a new project from the command line:
-
-```bash
-crewai create crew hello_crewai
-```
-
-This creates a new CrewAI project that can be used to explore the framework.
-
-The modern CrewAI project structure includes components such as:
-
-```text
-hello_crewai/
-├── agents/
-├── knowledge/
-├── skills/
-├── tools/
-├── crew.jsonc
-├── pyproject.toml
-└── README.md
-```
-
-The exact generated files may change between CrewAI releases, which is why the Masterclass will explain the generated project structure separately in the Project Architecture chapter.
-
-> **Note:** CrewAI also provides a classic project scaffold for older Python/YAML-style projects. If you specifically need that structure, the classic scaffold can be created with the appropriate `--classic` option. The Masterclass uses the current project structure as its primary approach.
-
----
-
-### 6. Verify the Python environment
-
-Confirm that Python is being resolved from the virtual environment.
-
-### Windows
-
-```powershell
-where python
-```
-
-### macOS / Linux
-
-```bash
-which python
-```
-
-The result should point to the `.venv` directory created for the Masterclass.
-
-You can also verify the installed CrewAI packages:
-
-```bash
-pip show crewai
-pip show crewai-tools
-```
-
----
-
 ### 7. Verify the installation with Python
 
 Create a file named:
@@ -263,50 +205,6 @@ If the script completes successfully, the Python environment can import CrewAI c
 
 ---
 
-### 8. API keys
-
-Installing CrewAI does **not** require you to immediately configure a specific hosted LLM provider.
-
-API keys become necessary when your application uses a provider that requires authentication.
-
-For example, later lessons may configure:
-
-```text
-OpenAI
-Anthropic
-Gemini
-Azure
-Other supported providers
-```
-
-If you use a locally hosted model through Ollama, the authentication requirements are different because the model can run locally.
-
-LLM provider configuration is intentionally covered in the **LLM Integration** chapter rather than making it part of the basic CrewAI installation.
-
----
-
-### 9. Optional local Ollama setup
-
-If you want to experiment with local models, Ollama can be installed separately.
-
-The conceptual setup is:
-
-```text
-CrewAI
-   │
-   ↓
-Ollama
-   │
-   ↓
-Local LLM
-```
-
-Ollama is **not required** to complete the basic CrewAI installation.
-
-It will be introduced later when the Masterclass covers LLM configuration and local models.
-
----
-
 ## Installation Checklist
 
 Before continuing to the next chapter, verify:
@@ -319,7 +217,6 @@ Before continuing to the next chapter, verify:
 [ ] crewai installed
 [ ] crewai-tools installed
 [ ] CrewAI CLI available
-[ ] First CrewAI project created
 [ ] CrewAI imports successfully
 [ ] Installation verification completed
 ```
